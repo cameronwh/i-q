@@ -1,0 +1,27 @@
+<div class="interview-component">
+
+    <div class="loading-message">{{loadingMessage}}</div>
+
+    <div class="container" *ngFor="let interview of currentInterviews">
+
+        <section class="header">
+            <div class="welcome-message">{{ constructTitle(interview.interviewerName) }}</div> <!-- 2 -->
+        </section>
+
+        <section class="body">
+            <div>Here are some details:</div>
+            <div>{{interview.details}}</div>
+
+            <div>Please click <a (click)="loadCandidateDetails(interview.candidateIds)">here</a> to view the candidate details below</div>
+            <section *ngIf="candidates.length > 0" class="candidates"> <!-- 3. -->
+                <ng-container *ngFor="let candidate of candidates">
+                    <span class="candidate-name">{{candidate.name}}</span>
+                </ng-container>
+            </section>
+        </section>
+
+        <section class="footer">
+            <span>That's all folks!</span>
+        </section>
+    </div>
+</div>
