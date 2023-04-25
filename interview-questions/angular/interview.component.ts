@@ -3,7 +3,7 @@ import { AfterViewInit, Component, Input, OnInit } from "@angular/core";
 import { State } from "@invenias/store";
 import { Store } from "@ngrx/store";
 
-import { PersonService } from "../../web/people/services/person.service";
+import { PersonService } from "../person.service";
 
 @Component({
     selector: 'interview-component',
